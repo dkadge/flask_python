@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>profile</title>
+	<script type="text/javascript" src="/static/jqurry.js"></script>
+
+</head>
+<body>
+	<form action="/new/logout">
+	<h1><Login Succesful</h1>
+	<label>Welcome to your profile</label>
+	<button type="submit">LOGOUT</button><br><br><br><br>
+	
+</form>
+</body>
+<body>
+<label>audioFileType=Song</label><br>
+<audio controls='controls' autoplay='autoplay' ></audio>
+	<ul>
+	{% for song in songs %}
+	<li><a href="javascript:void(0);" onclick="playsong('{{song}}')">{{song}}</a></li>
+	{% endfor %}
+	
+	</ul>
+</body>
+<body>
+	<form action="/new/update">
+	<button type="submit" style="margin:5px;" > Update </button>	
+</form>
+</body>
+<body>
+	<form action="/new/delete">
+	<button type="submit" style="margin:5px;" > Delete audio file </button>	
+</form>
+</body>
+<script type="text/javascript">
+function playsong(song){
+
+$('audio').attr('src','/static/music/'+song);
+}
+</script>
+ 
+</html>
+
